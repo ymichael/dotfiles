@@ -26,6 +26,10 @@ git_bundles = %w{
   https://github.com/ciaranm/detectindent.git
   https://github.com/Raimondi/delimitMate.git
   git://github.com/digitaltoad/vim-jade.git
+  https://github.com/ervandew/supertab.git
+
+  # jshint
+  https://github.com/wookiehangover/jshint.vim.git
 }
 
 require 'fileutils'

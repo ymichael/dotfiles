@@ -1,11 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_15_solution'
-let g:netrw_dirhist_2='/Users/michael/Dropbox/Projects/modivle'
-let g:netrw_dirhist_3='/Users/michael/Downloads/Mission 15'
-let g:netrw_dirhist_4='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_14_solution'
-let g:netrw_dirhist_5='/Users/michael/Downloads/Mission 15'
-let g:netrw_dirhist_6='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_12_solution'
-let g:netrw_dirhist_7='/Users/michael/Dropbox/Projects/hush'
-let g:netrw_dirhist_8='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_13a_solution'
-let g:netrw_dirhist_9='/Users/michael/Dropbox/Projects/dotfiles/vim/vim'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_13b_solution'
+let g:netrw_dirhist_2='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_15_solution'
+let g:netrw_dirhist_3='/Users/michael/Dropbox/Projects/modivle'
+let g:netrw_dirhist_4='/Users/michael/Dropbox/Projects/hush'
+let g:netrw_dirhist_5='/Users/michael/Dropbox/School/CS1101S - TA/cs1101s/task_program/mission_13a_solution'
