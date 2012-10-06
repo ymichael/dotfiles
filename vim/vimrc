@@ -1,0 +1,91 @@
+" === General Config ===
+
+" font + size
+set guifont=Menlo\ Regular:h12
+
+" Line numbers
+:set number
+
+" turn on syntax highlighting
+syntax on
+
+" use colorscheme
+colorscheme monokai
+
+"Reload files changed outside vim
+set autoread
+
+" languague dependent indenting
+" filetype detection
+filetype plugin indent on
+
+" wrapping
+set wrap
+" break line at words
+set linebreak
+
+" === Search Settings ===
+
+" Find next match as we type the search
+set incsearch
+
+" Highlight searches
+" :noh to remove highlighting.
+set hlsearch
+
+" maps \<space> to :noh
+nnoremap <leader><space> :noh<cr>
+
+" smart case-insensitive searching
+set ignorecase
+set smartcase
+
+" === Pathogen ===
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+
+" === NERDTREE ===
+" show hidden files in nerdtree
+let NERDTreeShowHidden=1
+" auto open nerd tree
+" au VimEnter *  NERDTree
+
+" === Folding ===
+" fold based on indent
+set foldmethod=indent
+" deepest fold is 10 levels
+set foldnestmax=10
+" don't fold by default
+set nofoldenable
+" set foldlevel=0
+
+" === Others ===
+
+set nocompatible
+set modelines=0
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set undofile
+
+" === TABS ===
+:let g:detectindent_preferred_indent = 4
+:let g:detectindent_preferred_expandtab = 1
+:autocmd BufReadPost * :DetectIndent 
+
