@@ -45,6 +45,9 @@ set smartcase
 call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 
+" === Powerline ===
+let g:Powerline_symbols = 'fancy'
+
 " === NERDTREE ===
 " show hidden files in nerdtree
 let NERDTreeShowHidden=1
