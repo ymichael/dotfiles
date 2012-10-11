@@ -4,7 +4,7 @@
 set guifont=Menlo\ Regular:h12
 
 " Line numbers
-:set number
+set number
 
 " turn on syntax highlighting
 syntax on
@@ -23,6 +23,10 @@ filetype plugin indent on
 set wrap
 " break line at words
 set linebreak
+
+" === Scroll bar ===
+set guioptions-=r
+set guioptions-=L
 
 " === Search Settings ===
 
@@ -53,6 +57,9 @@ let g:Powerline_symbols = 'fancy'
 let NERDTreeShowHidden=1
 " auto open nerd tree
 " au VimEnter *  NERDTree
+
+" === Swap files ===
+set directory=/tmp
 
 " === Folding ===
 " fold based on indent
@@ -90,5 +97,10 @@ set undofile
 " === TABS ===
 :let g:detectindent_preferred_indent = 4
 :let g:detectindent_preferred_expandtab = 1
-:autocmd BufReadPost * :DetectIndent 
+:autocmd BufReadPost * :DetectIndent
 
+" transparency
+if has('transparency')
+    set transparency=5
+    set guioptions=aAce
+endif

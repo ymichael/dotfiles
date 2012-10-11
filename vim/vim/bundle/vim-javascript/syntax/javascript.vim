@@ -201,6 +201,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javaScriptOpSymbols            Exception
   HiLink javaScriptLogicSymbols         Exception
   HiLink javaScriptFunction             Type
+  HiLink javaScriptOperator             Exception
 
   HiLink javaScriptComment              Comment
   HiLink javaScriptLineComment          Comment
@@ -224,13 +225,13 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javaScriptBranch               Conditional
   HiLink javaScriptRepeat               Repeat
   HiLink javaScriptStatement            Statement
-  "HiLink javaScriptFunction             Function
+  HiLink javaScriptFunction             Function
   HiLink javaScriptError                Error
   HiLink javaScriptParensError          Error
   HiLink javaScriptParensErrA           Error
   HiLink javaScriptParensErrB           Error
   HiLink javaScriptParensErrC           Error
-  HiLink javaScriptOperator             Operator
+  " HiLink javaScriptOperator           Operator
   HiLink javaScriptType                 Type
   HiLink javaScriptThis                 Type
   HiLink javaScriptNull                 Type
