@@ -10,7 +10,7 @@ set number
 syntax on
 
 " use colorscheme
-colorscheme monokai
+colorscheme Tomorrow-Night-Bright
 
 "Reload files changed outside vim
 set autoread
@@ -95,12 +95,12 @@ set laststatus=2
 set undofile
 
 " === TABS ===
-:let g:detectindent_preferred_indent = 4
-:let g:detectindent_preferred_expandtab = 1
-:autocmd BufReadPost * :DetectIndent
+" :let g:detectindent_preferred_indent = 4
+" :let g:detectindent_preferred_expandtab = 1
+" :autocmd BufReadPost * :DetectIndent
 
 " transparency
 if has('transparency')
-    set transparency=5
+    set transparency=9
     set guioptions=aAce
 endif
