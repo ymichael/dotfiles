@@ -12,7 +12,7 @@ export LSCOLORS="Cxfxcxdxbxegedabagacad"
 # a => all files (incl. hidden files)
 # G => colors
 # h => use units for filesizes
-alias la='ls -lahG'
+alias la='ls -ahG'
 # cd and ls in one command
 function cl() {
     cd "$@" && la;

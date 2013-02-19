@@ -27,3 +27,6 @@ function parse_git_branch {
 }
 
 PS1='[\u:\[\e[31;1m\]\W\[\e[0m\]\[\e[32;1m\]$(parse_git_branch)\[\e[0m\]]\$ '
+
+# hack.
+source ~/.bashrc

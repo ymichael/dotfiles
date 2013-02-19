@@ -33,7 +33,6 @@ git_bundles = %w{
   https://github.com/tpope/vim-fugitive.git
 
   https://github.com/kien/ctrlp.vim.git
-  https://github.com/scrooloose/syntastic.git
   https://github.com/myusuf3/numbers.vim.git
 }
 
