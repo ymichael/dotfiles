@@ -18,3 +18,4 @@ function cl() {
     cd "$@" && la;
 }
 
+alias gitroot='cd $(git rev-parse --show-cdup)'

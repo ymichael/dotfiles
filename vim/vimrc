@@ -1,5 +1,13 @@
 " === General Config ===
 
+" === Pathogen ===
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+
+" mouse
+set mouse=a
+set ttymouse=xterm2
+
 " font + size
 set guifont=Menlo\ Regular:h12
 
@@ -8,9 +16,6 @@ set number
 
 " turn on syntax highlighting
 syntax on
-
-" use colorscheme
-colorscheme Tomorrow-Night-Bright
 
 "Reload files changed outside vim
 set autoread
@@ -44,11 +49,6 @@ nnoremap <leader><space> :noh<cr>
 set ignorecase
 set smartcase
 
-" === Pathogen ===
-
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
-
 " === Powerline ===
 let g:Powerline_symbols = 'fancy'
 
@@ -63,12 +63,16 @@ set directory=/tmp
 
 " === Folding ===
 " fold based on indent
-set foldmethod=indent
+set foldmethod=syntax
 " deepest fold is 10 levels
 set foldnestmax=10
 " don't fold by default
 set nofoldenable
 " set foldlevel=0
+
+" === DelimitMate ===
+" enable <cr> expansion
+let g:delimitMate_expand_cr = 1
 
 " === Others ===
 
@@ -104,3 +108,7 @@ if has('transparency')
     set transparency=9
     set guioptions=aAce
 endif
+
+" use colorscheme
+colorscheme solarized
+set background=dark
