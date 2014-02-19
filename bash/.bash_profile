@@ -42,3 +42,8 @@ done
 
 # Enable vim key bindings in bash
 set -o vi
+
+# added by Anaconda 1.8.0 installer
+export PATH="/Users/michael/anaconda/bin:$PATH"
+
+export TERM=screen-256color

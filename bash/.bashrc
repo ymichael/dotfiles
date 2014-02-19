@@ -19,3 +19,12 @@ function cl() {
 }
 
 alias gitroot='cd $(git rev-parse --show-cdup)'
+
+function ta() {
+    if tmux ls | grep "\b$@\b"
+    then
+        tmux attach -t $@
+    else
+        tmux new -s $@
+    fi
+}

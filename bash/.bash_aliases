@@ -12,6 +12,7 @@ alias ymichael="ssh ec2-user@yrmichael.com"
 
 # lazy
 alias todo="todo.sh"
+alias py="python"
 alias spidermonkey="js -i"
 alias hglog="hg log --template \"{rev}:{node|short} {parents}{desc|firstline}\n\""
 alias proj="cl ~/Dropbox/Projects"
@@ -21,3 +22,6 @@ alias hyde="python ~/Dropbox/Projects/_lib/hyde/hyde.py"
 
 # grep with color
 alias grep="grep --color=always"
+alias rmvimundo="find . | grep un~ --color=no | xargs rm"
+
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"

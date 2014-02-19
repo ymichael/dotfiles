@@ -9,7 +9,7 @@ set mouse=a
 set ttymouse=xterm2
 
 " font + size
-set guifont=Menlo\ Regular:h12
+set guifont=Menlo\ Regular:h10
 
 " Line numbers
 set number
@@ -97,6 +97,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set undofile
+set undodir=$HOME/.vim/undo
 
 " === TABS ===
 " :let g:detectindent_preferred_indent = 4
@@ -112,3 +113,12 @@ endif
 " use colorscheme
 colorscheme solarized
 set background=dark
+
+" max 80 characters
+set textwidth=80
+set formatoptions=tcq
+
+" Whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWritePre * :%s/\s\+$//e
