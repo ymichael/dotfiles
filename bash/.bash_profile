@@ -47,3 +47,15 @@ set -o vi
 export PATH="/Users/michael/anaconda/bin:$PATH"
 
 export TERM=screen-256color
+
+function pygrep() {
+    grep -nIr --include=*.py $@ \.
+}
+
+function jsgrep() {
+    grep -nIr --include=*.js $@ \.
+}
+
+function css() {
+    grep -nIr --include=*.css $@ \.
+}
