@@ -15,8 +15,10 @@ PATH=$PATH:/usr/local/sbin:/usr/local/bin
 export PATH
 
 export LC_CTYPE="en_US.UTF-8"
+export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
 
-# Git Stuff
+ #Git Stuff
 source ~/bin/git-completion.bash
 function parse_git_dirty {
 	git diff --quiet || echo "*"
@@ -30,15 +32,6 @@ PS1='[\u:\[\e[31;1m\]\W\[\e[0m\]\[\e[32;1m\]$(parse_git_branch)\[\e[0m\]]\$ '
 
 # hack.
 source ~/.bashrc
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
 
 # Enable vim key bindings in bash
 set -o vi

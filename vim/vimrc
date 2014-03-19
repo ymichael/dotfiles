@@ -111,7 +111,8 @@ if has('transparency')
 endif
 
 " use colorscheme
-colorscheme solarized
+" colorscheme solarized
+colorscheme badwolf
 set background=dark
 
 " max 80 characters
