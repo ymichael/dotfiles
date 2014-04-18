@@ -15,8 +15,6 @@ PATH=$PATH:/usr/local/sbin:/usr/local/bin
 export PATH
 
 export LC_CTYPE="en_US.UTF-8"
-export CFLAGS=-Qunused-arguments
-export CPPFLAGS=-Qunused-arguments
 
  #Git Stuff
 source ~/bin/git-completion.bash
