@@ -1,15 +1,23 @@
-" === General Config ===
+" === Vundle Setup ===
+" ====================
+set nocompatible
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" === Plugins ===
 
-" === Pathogen ===
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
+" === End Vundle Setup ===
+" ========================
 
 " mouse
 set mouse=a
 set ttymouse=xterm2
-
-" font + size
-set guifont=Menlo\ Regular:h10
 
 " Line numbers
 set number
@@ -29,10 +37,6 @@ set wrap
 " break line at words
 set linebreak
 
-" === Scroll bar ===
-set guioptions-=r
-set guioptions-=L
-
 " === Search Settings ===
 
 " Find next match as we type the search
@@ -49,34 +53,24 @@ nnoremap <leader><space> :noh<cr>
 set ignorecase
 set smartcase
 
-" === Powerline ===
-let g:Powerline_symbols = 'fancy'
-
-" === NERDTREE ===
-" show hidden files in nerdtree
-let NERDTreeShowHidden=1
-" auto open nerd tree
-" au VimEnter *  NERDTree
-
 " === Swap files ===
 set directory=/tmp
+set backupdir=/tmp
 
-" === Folding ===
-" fold based on indent
-set foldmethod=syntax
-" deepest fold is 10 levels
-set foldnestmax=10
-" don't fold by default
-set nofoldenable
-" set foldlevel=0
+" colorscheme
+colorscheme desert
+set background=dark
 
-" === DelimitMate ===
-" enable <cr> expansion
-let g:delimitMate_expand_cr = 1
+" max 80 characters
+set textwidth=80
+set formatoptions=tcq
+
+" Whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWritePre * :%s/\s\+$//e
 
 " === Others ===
-
-set nocompatible
 set modelines=0
 set tabstop=4
 set shiftwidth=4
@@ -99,27 +93,3 @@ set laststatus=2
 set undofile
 set undodir=$HOME/.vim/undo
 
-" === TABS ===
-" :let g:detectindent_preferred_indent = 4
-" :let g:detectindent_preferred_expandtab = 1
-" :autocmd BufReadPost * :DetectIndent
-
-" transparency
-if has('transparency')
-    set transparency=9
-    set guioptions=aAce
-endif
-
-" use colorscheme
-colorscheme solarized
-" colorscheme badwolf
-set background=dark
-
-" max 80 characters
-set textwidth=80
-set formatoptions=tcq
-
-" Whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWritePre * :%s/\s\+$//e
