@@ -8,6 +8,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " === Plugins ===
+Plugin 'altercation/vim-colors-solarized'   " solarized
+Plugin 'tomtom/tcomment_vim'                " gcc for comments.
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -76,7 +80,7 @@ set directory=/tmp
 set undodir=/tmp
 
 " colorscheme
-colorscheme desert
+colorscheme solarized
 set background=dark
 
 set textwidth=80    " max 80 characters
