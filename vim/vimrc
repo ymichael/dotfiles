@@ -12,6 +12,9 @@ Plugin 'altercation/vim-colors-solarized'   " solarized
 Plugin 'tomtom/tcomment_vim'                " gcc for comments.
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -106,3 +109,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 set hidden
 set encoding=utf-8
 
+" vim-airline arrors.
+let g:airline_powerline_fonts = 1
+
+" Source extenal vimrcs
+if filereadable('~/qvimrc')
+    so ~/qvimrc
+endif
