@@ -113,3 +113,9 @@ let g:airline_powerline_fonts = 1
 if filereadable('~/qvimrc')
     so ~/qvimrc
 endif
+
+set splitright
+
+" bind F to grep word under cursor
+set grepprg=grep\ -nsRIH\ --exclude-dir=node_modules
+nnoremap F :grep! "<C-R><C-W>" *<CR>:cw<CR> <CR>
