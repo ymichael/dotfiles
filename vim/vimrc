@@ -14,7 +14,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
 Plugin 'bling/vim-airline'
+Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -44,12 +46,6 @@ set relativenumber " Show relative line numbers.
 " Wildmenu
 set wildmenu                    " visual autocomplete for command menu
 set wildmode=list:longest,full  " Controls the behavior of the wildmenu.
-
-" Tabs/Spaces.
-set tabstop=4       " number of visual spaces per TAB
-set expandtab       " tabs are spaces
-set shiftwidth=4    " how many columns text are indented by using << and >>
-set softtabstop=4   " how many spaces to insert when tabbing in INSERT mode.
 
 " Mouse
 set mouse=a             " mouse enabled for all.
