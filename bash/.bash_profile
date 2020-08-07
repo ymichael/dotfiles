@@ -22,7 +22,7 @@ function pygrep() {
 }
 
 function jsgrep() {
-    grep -nIr --include=*.js $@ \.
+    grep -nIr --exclude-dir=node_modules --include=*.js $@ \.
 }
 
 function cssgrep() {

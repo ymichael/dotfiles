@@ -12,17 +12,23 @@ Plugin 'altercation/vim-colors-solarized'   " solarized
 Plugin 'tomtom/tcomment_vim'                " gcc for comments.
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sleuth'
 Plugin 'bling/vim-airline'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'leafgarland/typescript-vim'
+" Plugin 'jparise/vim-graphql'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
 " === End Vundle Setup ===
 " ========================
+"
+let g:polyglot_disabled = ['typescript']
 
 " Most comments from: http://dougblack.io/words/a-good-vimrc.html
 syntax on       " enable syntax highlighting
@@ -117,5 +123,16 @@ endif
 set splitright
 
 " bind F to grep word under cursor
-set grepprg=grep\ -nsRIH\ --exclude-dir=node_modules
+set grepprg=grep\ -nsRIH\ --exclude-dir=types\ --exclude-dir=sub_modules\ --exclude-dir=node_modules\ --exclude-dir=build
 nnoremap F :grep! "<C-R><C-W>" *<CR>:cw<CR> <CR>
+
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
+nnoremap <c-p> :FZF<cr>
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
