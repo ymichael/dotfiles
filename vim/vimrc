@@ -20,15 +20,26 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'leafgarland/typescript-vim'
-" Plugin 'jparise/vim-graphql'
+Plugin 'jremmen/vim-ripgrep'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'neoclide/coc.nvim'
+Plugin 'yssl/QFEnter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
 filetype plugin indent on
+" On pressing tab, insert 2 spaces
+set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
 " === End Vundle Setup ===
 " ========================
 "
 let g:polyglot_disabled = ['typescript']
+" let g:rg_derive_root = 1
 
 " Most comments from: http://dougblack.io/words/a-good-vimrc.html
 syntax on       " enable syntax highlighting
@@ -115,22 +126,16 @@ set encoding=utf-8
 " vim-airline arrors.
 let g:airline_powerline_fonts = 1
 
-" Source extenal vimrcs
-if filereadable('~/qvimrc')
-    so ~/qvimrc
-endif
-
 set splitright
 
 " bind F to grep word under cursor
-set grepprg=grep\ -nsRIH\ --exclude-dir=types\ --exclude-dir=sub_modules\ --exclude-dir=node_modules\ --exclude-dir=build
-nnoremap F :grep! "<C-R><C-W>" *<CR>:cw<CR> <CR>
-
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number '.shellescape(<q-args>), 0,
-  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
-
+" set grepprg=grep\ -nsRIH\ --exclude-dir=types\ --exclude-dir=sub_modules\ --exclude-dir=node_modules\ --exclude-dir=build
+nnoremap F :Rg "<C-R><C-W>" <CR>
+" command! -bang -nargs=* GGrep
+"   \ call fzf#vim#grep(
+"   \   'git grep --line-number '.shellescape(<q-args>), 0,
+"   \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+"
 nnoremap <c-p> :FZF<cr>
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
