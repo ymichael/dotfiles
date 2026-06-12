@@ -97,6 +97,10 @@ set directory=/tmp
 set undodir=/tmp
 
 " colorscheme
+" Use the 256-color approximation so solarized renders correctly in terminals
+" whose ANSI palette isn't set to Solarized (e.g. default iTerm2). Without this
+" the plugin defaults to termcolors=16 and the colors look wrong.
+let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
 
