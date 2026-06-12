@@ -31,9 +31,18 @@ back it up and re-run to replace it.
 
 - **ripgrep + fzf** (used by the vimrc): `brew install ripgrep fzf`
   (or drop the prebuilt binaries into `~/.local/bin`).
-- A **Powerline/Nerd font** for `vim-airline` glyphs — install it, then select
-  it in your terminal profile.
+- A **Powerline/Nerd font** for the `vim-airline` glyphs (`g:airline_powerline_fonts`).
+  Install one, then select it in your terminal profile (iTerm2: Settings →
+  Profiles → Text → Font). Good options:
+  - [Monaco Nerd Font](https://github.com/thep0y/monaco-nerd-font/releases) —
+    patched Monaco; selects as "Monaco Nerd Font".
+  - [MesloLGS NF](https://github.com/romkatv/powerlevel10k-media) — a solid
+    default if you don't care about Monaco specifically.
 - **coc language servers**, from inside vim: `:CocInstall coc-tsserver coc-json`.
+
+> **Note on the colorscheme:** the vimrc sets `g:solarized_termcolors=256` so
+> solarized renders correctly even when the terminal's ANSI palette isn't itself
+> Solarized (e.g. default iTerm2). Without it the colors look wrong.
 
 ## What's in here
 
