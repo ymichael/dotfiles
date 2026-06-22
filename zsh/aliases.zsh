@@ -45,3 +45,20 @@ ta() {
 # adjust if you keep those folders on this machine):
 # alias proj="cl ~/Dropbox/Projects"
 # alias school="cl ~/Dropbox/School"
+
+# --- SSH-aware prompt marker ---------------------------------------------
+# Over SSH, prepend a bold purple [hostname] tag to the prompt so a remote
+# shell is visually distinct from a local one. %m = the remote's own short
+# hostname, so this is generic across every machine you ssh into.
+#
+# A one-shot precmd hook is used (not a plain `PROMPT=...`) because oh-my-zsh
+# sources this custom file BEFORE loading the theme, so setting PROMPT here
+# directly would just be overwritten by the theme.
+if [[ -n "$SSH_CONNECTION" || -n "$SSH_TTY" || -n "$SSH_CLIENT" ]]; then
+  autoload -Uz add-zsh-hook
+  _dotfiles_ssh_prompt() {
+    PROMPT="%B%F{141}[%m]%f%b ${PROMPT}"
+    add-zsh-hook -d precmd _dotfiles_ssh_prompt   # run once, then unhook
+  }
+  add-zsh-hook precmd _dotfiles_ssh_prompt
+fi

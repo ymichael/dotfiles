@@ -12,6 +12,12 @@ function parse_git_branch {
 
 PS1='[\u:\[\e[31;1m\]\W\[\e[0m\]\[\e[32;1m\]$(parse_git_branch)\[\e[0m\]]\$ '
 
+# Over SSH, prepend a bold purple [hostname] tag so a remote shell is visually
+# distinct from a local one. \h = the remote's own short hostname (generic).
+if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CLIENT" ]; then
+    PS1='\[\e[1;35m\][\h]\[\e[0m\] '"$PS1"
+fi
+
 # Enable vim key bindings in bash
 set -o vi
 
