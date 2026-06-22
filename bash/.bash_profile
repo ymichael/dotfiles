@@ -61,6 +61,10 @@ function ta() {
     fi
 }
 
+# Connect to the mbp-intel server with iTerm2 native tmux integration (-CC).
+# Usage: `mbp` (session "main") or `mbp work`.  Run from inside iTerm2.
+mbp() { ssh -t mbp-intel "tmux -CC new -A -s ${1:-main}"; }
+
 # Aliases
 alias py="python"
 alias ipy="ipython"
