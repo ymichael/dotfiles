@@ -54,7 +54,10 @@ ta() {
 # iTerm2's native control mode (-CC): remote tmux windows become real iTerm2
 # tabs/windows, and the session persists on the server across disconnects.
 # Run from inside iTerm2.  Usage: `mbp` (session "main") or `mbp work`.
-mbp() { ssh -t mbp-intel "tmux -CC new -A -s ${1:-main}"; }
+# Full path to tmux: ssh runs a non-login shell whose PATH lacks /usr/local/bin
+# (Homebrew), so a bare `tmux` wouldn't resolve. Panes inside tmux are login
+# shells and get the normal PATH.
+mbp() { ssh -t mbp-intel "/usr/local/bin/tmux -CC new -A -s ${1:-main}"; }
 
 # Project shortcuts from the original dotfiles (Dropbox paths — uncomment and
 # adjust if you keep those folders on this machine):
