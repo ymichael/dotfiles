@@ -9,6 +9,15 @@ export LC_CTYPE="en_US.UTF-8"
 # vi keybindings in the shell (bash: `set -o vi`)
 bindkey -v
 
+# vi mode leaves Ctrl+R/Ctrl+S unbound (zsh only auto-binds them in emacs mode),
+# so restore incremental history search in both vi insert and command keymaps.
+# unsetopt flow_control frees Ctrl+S from terminal XON/XOFF so forward search works.
+unsetopt flow_control
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M viins '^S' history-incremental-search-forward
+bindkey -M vicmd '^R' history-incremental-search-backward
+bindkey -M vicmd '^S' history-incremental-search-forward
+
 # Colors for ls / CLI
 export CLICOLOR="1"
 export LSCOLORS="Cxfxcxdxbxegedabagacad"
